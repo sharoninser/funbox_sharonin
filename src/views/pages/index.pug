@@ -1,0 +1,91 @@
+extends ../main.layout.pug
+include ../mixins/mixins
+
+block variables
+	- var title = 'Нямушка'
+
+block content
+	section.section 
+		.container
+			.section__wrapper 
+				h1 Ты сегодня покомил кота?
+				.cards
+					.card
+						.card__main
+							.card__corner
+							.card__text 
+								p.card__text-suptitle Сказочное заморское яство
+								p.card__text-title
+									| Нямушка
+									span с фуа-гра
+								.card__text-desc
+									ul
+										li.card__text-portion
+											span 40 
+											| порций
+										li.card__text-gift
+											span 2 
+											| мыши в подарок
+										li.card__text-other
+											| заказчик доволен
+							.card__img
+								.card__img-item
+									img(src="images/cat.png")
+							.card__weight
+								span 2
+								span кг
+						.card__bottom
+							span Чего сидишь? Порадуй котэ, 
+							a(href="#") купи
+					.card.disabled
+						.card__main
+							.card__corner
+							.card__text 
+								p.card__text-suptitle Сказочное заморское яство
+								p.card__text-title
+									| Нямушка
+									span с фуа-гра
+								.card__text-desc
+									ul
+										li.card__text-portion
+											span 40 
+											| порций
+										li.card__text-gift
+											span 2 
+											| мыши в подарок
+										li.card__text-other
+											| заказчик доволен
+							.card__img
+								.card__img-item
+									img(src="images/cat.png")
+							.card__weight
+								span 2
+								span кг
+						.card__bottom.push-ended
+							span Печалька, с фуа-гра закончился.
+					.card.selected
+						.card__main
+							.card__corner
+							.card__text 
+								p.card__text-suptitle Сказочное заморское яство
+								p.card__text-title
+									| Нямушка
+									span с фуа-гра
+								.card__text-desc
+									ul
+										li.card__text-portion
+											span 40 
+											| порций
+										li.card__text-gift
+											span 2 
+											| мыши в подарок
+										li.card__text-other
+											| заказчик доволен
+							.card__img
+								.card__img-item
+									img(src="images/cat.png")
+							.card__weight
+								span 2
+								span кг
+						.card__bottom
+							span Печень утки разварная с артишоками.
