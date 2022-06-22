@@ -1,0 +1,172 @@
+.card
+	&:hover
+		.card__main,
+		.card__corner,
+		.card__corner:before,
+		.card__corner:after
+			border-color: $default-color-hover
+	&__main
+		position: relative
+		height: 480px
+		width: 320px
+		background-repeat: no-repeat
+		padding: 18px 48px
+		border-radius: 70px 12px 12px 12px
+		border: 4px solid $default-color
+		background-color: $white
+		transition: $default
+		cursor: pointer
+	&__corner,
+	&__corner::before,
+	&__corner::after
+		position: absolute
+		content: ''
+		width: 60px
+		height: 60px
+		border-top: 4px solid $default-color
+		background-color: $white
+		transition: $default
+	&__corner
+		top: 8px
+		left: 8px
+		transform: rotate(-45deg)
+	&__corner::before
+		left: -30px
+		top: 9px
+		transform: rotate(-45deg)
+	&__corner::after
+		right: -30px
+		top: 9px
+		transform: rotate(45deg)
+	&__text
+		position: relative
+		padding-top: 23px
+		&-suptitle
+			position: absolute
+			content: ''
+			left: 0
+			top: 0
+			width: 100%
+			font-size: 16px
+			line-height: 19px
+			color: $gray
+			margin-bottom: 4px
+			opacity: 1
+			visibility: visible
+			transition: $default
+			&.hover-text
+				opacity: 0
+				visibility: hidden
+				color: $selected-color-text
+		&-title
+			font-size: 48px
+			line-height: 56px
+			color: $black
+			font-weight: 700
+			margin-bottom: 15px
+			span
+				display: block
+				font-size: 24px
+				line-height: 28px
+		&-desc
+			ul
+				li
+					font-size: 14px
+					line-height: 16px
+					color: $gray
+					span
+						font-weight: 700
+	&__img
+		position: absolute
+		content: ''
+		bottom: 0
+		left: 0
+		overflow: hidden
+		width: 100%
+		height: 268px
+		border-radius: 8px
+		&-item
+			width: 368px
+			height: 360px
+			img
+				object-fit: contain
+				object-position: -28px 0
+	&__weight
+		position: absolute
+		content: ''
+		bottom: 12px
+		right: 12px
+		width: 80px
+		height: 80px
+		border-radius: 50%
+		overflow: hidden
+		background-color: $default-color
+		display: flex
+		flex-direction: column
+		align-items: center
+		justify-content: center
+		transition: $default
+		span
+			color: $white
+			font-size: 21px
+			line-height: 22px
+			text-align: center
+		span:first-child
+			font-size: 42px
+			line-height: 42px
+	&__bottom
+		font-size: 13px
+		line-height: 15px
+		text-align: center
+		color: $white
+		margin-top: 14px
+		a
+			color: $default-color
+			text-decoration: none
+			font-weight: 700
+	&:hover:not(.disabled)
+		.card__weight
+			background-color: $default-color-hover
+	&.selected:not(.disabled)
+		&:hover
+			.card__main,
+			.card__corner,
+			.card__corner:before,
+			.card__corner:after
+				border-color: $selected-color-hover
+			.card__weight
+				background-color: $selected-color-hover
+		.card__main,
+		.card__corner,
+		.card__corner:before,
+		.card__corner:after
+			border-color: $selected-color
+		.card__weight
+			background-color: $selected-color
+	&.disabled
+		pointer-events: none
+		user-select: none
+		.card__main,
+		.card__corner,
+		.card__corner:before,
+		.card__corner:after
+			border-color: $disabled-color
+		.card__main
+			cursor: default
+		.card__text *
+			color: $disabled-color
+		.card__text
+			opacity: 0.5
+		.card__img
+			opacity: 0.5
+		.card__weight
+			background-color: $disabled-color
+		.card__bottom
+			color: $disabled-color-text
+	&.selected:hover
+		.card__text-suptitle.hero-text
+			opacity: 0
+			visibility: hidden
+		.card__text-suptitle.hover-text
+			opacity: 1
+			visibility: visible
